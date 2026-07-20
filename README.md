@@ -6,9 +6,9 @@ This is a static front-end prototype (HTML/CSS + Bootstrap) — no backend, just
 
 ## Pages
 
-- **Dashboard** (`index.html`) — overview of users, roles, applications, sessions, and login activity
-- **Applications** (`applications.html`) — manage SPEA applications
-- **Roles** (`role.html`) — manage user roles and permissions
-- **Users** (`users.html`) — manage system users
-- **Reports** (`reports.html`) — usage and activity reports
-- **Settings** (`settings.html`) — system configuration
+- **Dashboard** (`index.html`) overview of users, roles, applications, sessions, and login activity
+- **Applications** (`applications.html`)  manage SPEA applications
+- **Roles** (`role.html`)  manage user roles and permissions
+- **Users** (`users.html`)  manage system users
+- **Reports** (`reports.html`)  usage and activity reports
+- **Settings** (`settings.html`)  system configuration
