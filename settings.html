@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | Unified Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__top">
+        <div class="sidebar__logo"><i class="bi bi-shield-lock"></i></div>
+        <span class="sidebar__brand">Admin</span>
+        <span class="sidebar__collapse"><i class="bi bi-chevron-left"></i></span>
+      </div>
+      <nav class="nav-list">
+        <a class="nav-link" href="index.html"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+        <a class="nav-link" href="applications.html"><i class="bi bi-app-indicator"></i><span>Application</span></a>
+        <a class="nav-link" href="role.html"><i class="bi bi-shield-check"></i><span>Role</span></a>
+        <a class="nav-link" href="users.html"><i class="bi bi-people"></i><span>Users</span></a>
+        <a class="nav-link" href="reports.html"><i class="bi bi-bar-chart"></i><span>Reports</span></a>
+        <a class="nav-link active" href="settings.html"><i class="bi bi-gear"></i><span>Settings</span></a>
+      </nav>
+      <div class="sidebar__foot">
+        <a class="btn-logout" href="#"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="page-head">
+        <div>
+          <h1 class="page-title">Settings</h1>
+          <p class="page-sub">Configure system, security and notification preferences.</p>
+        </div>
+        <span class="btn-primary-ums"><i class="bi bi-check-lg"></i><span>Save Changes</span></span>
+      </header>
+
+      <div class="settings-grid">
+        <div class="panel">
+          <h2 class="panel__title">General</h2>
+          <p class="panel__sub" style="margin-bottom:18px">Basic system identity and defaults.</p>
+          <div class="field">
+            <label>System Name</label>
+            <input class="form-control" value="Unified Management System">
+          </div>
+          <div class="field">
+            <label>Default Language</label>
+            <select class="form-select"><option>English</option><option>Arabic</option></select>
+          </div>
+          <div class="field">
+            <label>Timezone</label>
+            <select class="form-select"><option>GST (UTC+4)</option><option>UTC</option></select>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">Security</h2>
+          <p class="panel__sub" style="margin-bottom:8px">Authentication and access controls.</p>
+          <div class="switch-row">
+            <div class="switch-text"><strong>Two-Factor Authentication</strong><span>Require a code at sign-in.</span></div>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div class="switch-row">
+            <div class="switch-text"><strong>Auto-Lock Inactive Accounts</strong><span>Lock after 30 days idle.</span></div>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div class="switch-row">
+            <div class="switch-text"><strong>Enforce Strong Passwords</strong><span>Minimum 12 characters, mixed case.</span></div>
+            <label class="switch"><input type="checkbox"><span class="track"></span></label>
+          </div>
+        </div>
+
+        <div class="panel col-span-2">
+          <h2 class="panel__title">Notifications</h2>
+          <p class="panel__sub" style="margin-bottom:8px">Choose which events send an email alert.</p>
+          <div class="switch-row">
+            <div class="switch-text"><strong>New User Registered</strong><span>Notify admins on each new account.</span></div>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div class="switch-row">
+            <div class="switch-text"><strong>Failed Login Threshold</strong><span>Alert after 5 failed attempts.</span></div>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div class="switch-row">
+            <div class="switch-text"><strong>Weekly Summary</strong><span>Send a usage digest every Monday.</span></div>
+            <label class="switch"><input type="checkbox"><span class="track"></span></label>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

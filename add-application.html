@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Application | Unified Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__top">
+        <div class="sidebar__logo"><i class="bi bi-shield-lock"></i></div>
+        <span class="sidebar__brand">Admin</span>
+        <span class="sidebar__collapse"><i class="bi bi-chevron-left"></i></span>
+      </div>
+      <nav class="nav-list">
+        <a class="nav-link" href="index.html"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+        <a class="nav-link active" href="applications.html"><i class="bi bi-app-indicator"></i><span>Application</span></a>
+        <a class="nav-link" href="role.html"><i class="bi bi-shield-check"></i><span>Role</span></a>
+        <a class="nav-link" href="users.html"><i class="bi bi-people"></i><span>Users</span></a>
+        <a class="nav-link" href="reports.html"><i class="bi bi-bar-chart"></i><span>Reports</span></a>
+        <a class="nav-link" href="settings.html"><i class="bi bi-gear"></i><span>Settings</span></a>
+      </nav>
+      <div class="sidebar__foot">
+        <a class="btn-logout" href="#"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="page-head">
+        <div>
+          <h1 class="page-title">Add New Application</h1>
+          <p class="page-sub">Register a new application and generate its credentials.</p>
+        </div>
+        <a class="btn-ghost-ums" href="applications.html"><i class="bi bi-arrow-left"></i><span>Back to list</span></a>
+      </header>
+
+      <div class="wizard">
+        <!-- These radios switch the visible step. Rail + panels react via ~ selectors. -->
+        <input type="radio" name="wiz" id="wz1" class="wz-radio" checked>
+        <input type="radio" name="wiz" id="wz2" class="wz-radio">
+        <input type="radio" name="wiz" id="wz3" class="wz-radio">
+
+        <div class="wizard__rail">
+          <h2 class="wizard__heading">Setup</h2>
+          <p class="wizard__heading-sub">Complete each step to register the app.</p>
+          <div class="steps">
+            <label class="step step--1" for="wz1">
+              <span class="step__dot">1</span>
+              <span><span class="step__label">Step 1</span><br><span class="step__name">Information</span></span>
+            </label>
+            <label class="step step--2" for="wz2">
+              <span class="step__dot">2</span>
+              <span><span class="step__label">Step 2</span><br><span class="step__name">Security / Auth</span></span>
+            </label>
+            <label class="step step--3" for="wz3">
+              <span class="step__dot">3</span>
+              <span><span class="step__label">Step 3</span><br><span class="step__name">Review</span></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="wizard__body">
+          <!-- Step 1 -->
+          <section class="wizard__panel panel--1">
+            <h3 class="section-title">Application Information</h3>
+            <div class="form-grid">
+              <div class="field">
+                <label>Alias <span class="req">*</span></label>
+                <input class="form-control" placeholder="portal-web">
+                <span class="hint">Unique short code, e.g. <code>portal-web</code></span>
+              </div>
+              <div class="field">
+                <label>Display Order</label>
+                <input class="form-control" type="number" value="0">
+              </div>
+              <div class="field">
+                <label>Name (English) <span class="req">*</span></label>
+                <input class="form-control" placeholder="User Management System">
+              </div>
+              <div class="field">
+                <label>Name (Arabic) <span class="req">*</span></label>
+                <input class="form-control" placeholder="نظام إدارة المستخدمين" dir="rtl">
+              </div>
+              <div class="field col-span-2">
+                <label>Description (English)</label>
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <div class="field col-span-2">
+                <label>Description (Arabic)</label>
+                <textarea class="form-control" rows="3" dir="rtl"></textarea>
+              </div>
+            </div>
+            <div class="wizard__foot">
+              <a class="btn-ghost-ums" href="applications.html">Cancel</a>
+              <div class="spacer"></div>
+              <label class="btn-primary-ums" for="wz2">Next <i class="bi bi-arrow-right"></i></label>
+            </div>
+          </section>
+
+          <!-- Step 2 -->
+          <section class="wizard__panel panel--2">
+            <h3 class="section-title">Security / Auth</h3>
+            <div class="form-grid">
+              <div class="field">
+                <label>Client Hostname</label>
+                <input class="form-control" placeholder="https://app.example.com">
+              </div>
+              <div class="field">
+                <label>Client ID <span class="req">*</span></label>
+                <input class="form-control" placeholder="Enter client ID">
+              </div>
+              <div class="field">
+                <label>Redirect URL</label>
+                <input class="form-control" placeholder="https://app.example.com/auth/callback">
+              </div>
+              <div class="field">
+                <label>Status</label>
+                <select class="form-select"><option>Active</option><option>Inactive</option></select>
+              </div>
+              <div class="field col-span-2">
+                <label>Client Secret</label>
+                <div class="secret-row">
+                  <input class="form-control" placeholder="Leave blank to auto-generate">
+                  <span class="btn-ghost-ums"><i class="bi bi-arrow-repeat"></i> Generate</span>
+                </div>
+                <span class="hint">A secret will be generated automatically if left blank.</span>
+              </div>
+            </div>
+            <div class="wizard__foot">
+              <label class="btn-ghost-ums" for="wz1"><i class="bi bi-arrow-left"></i> Back</label>
+              <div class="spacer"></div>
+              <label class="btn-primary-ums" for="wz3">Next <i class="bi bi-arrow-right"></i></label>
+            </div>
+          </section>
+
+          <!-- Step 3 -->
+          <section class="wizard__panel panel--3">
+            <h3 class="section-title">Review</h3>
+            <div class="review-list">
+              <div class="review-item"><span class="k">Alias</span><span class="v">portal-web</span></div>
+              <div class="review-item"><span class="k">Display Order</span><span class="v">0</span></div>
+              <div class="review-item"><span class="k">Name (English)</span><span class="v">User Management System</span></div>
+              <div class="review-item"><span class="k">Name (Arabic)</span><span class="v">نظام إدارة المستخدمين</span></div>
+              <div class="review-item"><span class="k">Client Hostname</span><span class="v">https://app.example.com</span></div>
+              <div class="review-item"><span class="k">Client ID</span><span class="v">ums_web</span></div>
+              <div class="review-item"><span class="k">Redirect URL</span><span class="v">/auth/callback</span></div>
+              <div class="review-item"><span class="k">Status</span><span class="v">Active</span></div>
+            </div>
+            <div class="wizard__foot">
+              <label class="btn-ghost-ums" for="wz2"><i class="bi bi-arrow-left"></i> Back</label>
+              <div class="spacer"></div>
+              <button class="btn-primary-ums" type="button"><i class="bi bi-check-lg"></i> Create Application</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

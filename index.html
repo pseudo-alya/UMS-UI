@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Unified Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__top">
+        <div class="sidebar__logo"><i class="bi bi-shield-lock"></i></div>
+        <span class="sidebar__brand">Admin</span>
+        <span class="sidebar__collapse"><i class="bi bi-chevron-left"></i></span>
+      </div>
+      <nav class="nav-list">
+        <a class="nav-link active" href="index.html"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+        <a class="nav-link" href="applications.html"><i class="bi bi-app-indicator"></i><span>Application</span></a>
+        <a class="nav-link" href="role.html"><i class="bi bi-shield-check"></i><span>Role</span></a>
+        <a class="nav-link" href="users.html"><i class="bi bi-people"></i><span>Users</span></a>
+        <a class="nav-link" href="reports.html"><i class="bi bi-bar-chart"></i><span>Reports</span></a>
+        <a class="nav-link" href="settings.html"><i class="bi bi-gear"></i><span>Settings</span></a>
+      </nav>
+      <div class="sidebar__foot">
+        <a class="btn-logout" href="#"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="page-head">
+        <div>
+          <h1 class="page-title">Dashboard Overview</h1>
+          <p class="page-sub">Users, roles, applications, sessions and login activity.</p>
+        </div>
+      </header>
+
+      <!-- Primary metrics -->
+      <section class="stat-grid">
+        <div class="stat-card stat--total">
+          <div class="stat-card__value">128</div>
+          <div class="stat-card__label">Total Users</div>
+          <i class="bi bi-people stat-card__icon"></i>
+        </div>
+        <div class="stat-card stat--active">
+          <div class="stat-card__value">74</div>
+          <div class="stat-card__label">Active Users</div>
+          <i class="bi bi-person-check stat-card__icon"></i>
+        </div>
+        <div class="stat-card stat--blocked">
+          <div class="stat-card__value">12</div>
+          <div class="stat-card__label">Blocked Users</div>
+          <i class="bi bi-person-x stat-card__icon"></i>
+        </div>
+        <div class="stat-card stat--locked">
+          <div class="stat-card__value">8</div>
+          <div class="stat-card__label">Locked Users</div>
+          <i class="bi bi-lock stat-card__icon"></i>
+        </div>
+      </section>
+
+      <!-- CSS-only expand: checkbox toggles the secondary metrics + button label -->
+      <input type="checkbox" id="more-toggle" class="more-toggle">
+      <section class="stat-grid more-stats">
+        <div class="stat-card stat--roles">
+          <div class="stat-card__value">4</div>
+          <div class="stat-card__label">Total Roles</div>
+          <i class="bi bi-shield-check stat-card__icon"></i>
+        </div>
+        <div class="stat-card stat--apps">
+          <div class="stat-card__value">3</div>
+          <div class="stat-card__label">Applications</div>
+          <i class="bi bi-grid stat-card__icon"></i>
+        </div>
+        <div class="stat-card stat--session">
+          <div class="stat-card__value">12</div>
+          <div class="stat-card__label">Active Sessions</div>
+          <i class="bi bi-broadcast stat-card__icon"></i>
+        </div>
+        <div class="stat-card stat--login">
+          <div class="stat-card__value">9</div>
+          <div class="stat-card__label">Today's Logins</div>
+          <i class="bi bi-box-arrow-in-right stat-card__icon"></i>
+        </div>
+      </section>
+      <div class="more-row">
+        <label for="more-toggle" class="btn-ghost-ums">
+          <span class="more-btn__more"><i class="bi bi-plus-circle"></i> More Information</span>
+          <span class="more-btn__less"><i class="bi bi-dash-circle"></i> Less Information</span>
+        </label>
+      </div>
+
+      <!-- Charts row 1 -->
+      <section class="chart-grid">
+        <div class="panel">
+          <h2 class="panel__title">User Status Distribution</h2>
+          <p class="panel__sub">Share of users by account state.</p>
+          <div class="chart-box">
+            <div class="donut">
+              <svg viewBox="0 0 42 42">
+                <circle class="donut__ring" cx="21" cy="21" r="15.9" stroke="#eef1f5"></circle>
+                <g transform="rotate(-90 21 21)">
+                  <circle class="donut__ring" cx="21" cy="21" r="15.9" pathLength="100" stroke="#1aa179" stroke-dasharray="58 42" stroke-dashoffset="0"></circle>
+                  <circle class="donut__ring" cx="21" cy="21" r="15.9" pathLength="100" stroke="#56637a" stroke-dasharray="27 73" stroke-dashoffset="-58"></circle>
+                  <circle class="donut__ring" cx="21" cy="21" r="15.9" pathLength="100" stroke="#e0574f" stroke-dasharray="9 91" stroke-dashoffset="-85"></circle>
+                  <circle class="donut__ring" cx="21" cy="21" r="15.9" pathLength="100" stroke="#e8973a" stroke-dasharray="6 94" stroke-dashoffset="-94"></circle>
+                </g>
+              </svg>
+              <div class="legend">
+                <span style="--dot:#1aa179">Active &nbsp;58%</span>
+                <span style="--dot:#56637a">Inactive &nbsp;27%</span>
+                <span style="--dot:#e0574f">Blocked &nbsp;9%</span>
+                <span style="--dot:#e8973a">Locked &nbsp;6%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">Login Activity</h2>
+          <p class="panel__sub">Logins over the last 7 days.</p>
+          <div class="chart-box">
+            <div class="line-chart">
+              <svg viewBox="0 0 420 220" preserveAspectRatio="none">
+                <line x1="30" y1="190" x2="400" y2="190" stroke="#e7ebf0"></line>
+                <polygon points="30,122 92,71 153,105 215,37 277,88 338,54 400,20 400,190 30,190" fill="rgba(59,111,224,.10)"></polygon>
+                <polyline points="30,122 92,71 153,105 215,37 277,88 338,54 400,20" fill="none" stroke="#3b6fe0" stroke-width="2.5"></polyline>
+                <g fill="#3b6fe0">
+                  <circle cx="30" cy="122" r="3.5"></circle>
+                  <circle cx="92" cy="71" r="3.5"></circle>
+                  <circle cx="153" cy="105" r="3.5"></circle>
+                  <circle cx="215" cy="37" r="3.5"></circle>
+                  <circle cx="277" cy="88" r="3.5"></circle>
+                  <circle cx="338" cy="54" r="3.5"></circle>
+                  <circle cx="400" cy="20" r="3.5"></circle>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts row 2 -->
+      <section class="chart-grid">
+        <div class="panel">
+          <h2 class="panel__title">Application Wise Users</h2>
+          <p class="panel__sub">Users assigned per application.</p>
+          <div class="chart-box">
+            <div class="bars">
+              <div class="bar-row">
+                <span class="bar-row__label">User Mgmt System</span>
+                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#16a4bd"></div></div>
+                <span class="bar-row__val">42</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-row__label">Billing Portal</span>
+                <div class="bar-track"><div class="bar-fill" style="width:67%;background:#16a4bd"></div></div>
+                <span class="bar-row__val">28</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-row__label">Support Desk</span>
+                <div class="bar-track"><div class="bar-fill" style="width:36%;background:#16a4bd"></div></div>
+                <span class="bar-row__val">15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">Role Wise Users</h2>
+          <p class="panel__sub">Users assigned per role.</p>
+          <div class="chart-box">
+            <div class="bars">
+              <div class="bar-row">
+                <span class="bar-row__label">Admin</span>
+                <div class="bar-track"><div class="bar-fill" style="width:100%;background:#7c5cd6"></div></div>
+                <span class="bar-row__val">15</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-row__label">Viewer</span>
+                <div class="bar-track"><div class="bar-fill" style="width:60%;background:#7c5cd6"></div></div>
+                <span class="bar-row__val">9</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-row__label">Super Admin</span>
+                <div class="bar-track"><div class="bar-fill" style="width:40%;background:#7c5cd6"></div></div>
+                <span class="bar-row__val">6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

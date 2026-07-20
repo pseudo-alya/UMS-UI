@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports | Unified Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__top">
+        <div class="sidebar__logo"><i class="bi bi-shield-lock"></i></div>
+        <span class="sidebar__brand">Admin</span>
+        <span class="sidebar__collapse"><i class="bi bi-chevron-left"></i></span>
+      </div>
+      <nav class="nav-list">
+        <a class="nav-link" href="index.html"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+        <a class="nav-link" href="applications.html"><i class="bi bi-app-indicator"></i><span>Application</span></a>
+        <a class="nav-link" href="role.html"><i class="bi bi-shield-check"></i><span>Role</span></a>
+        <a class="nav-link" href="users.html"><i class="bi bi-people"></i><span>Users</span></a>
+        <a class="nav-link active" href="reports.html"><i class="bi bi-bar-chart"></i><span>Reports</span></a>
+        <a class="nav-link" href="settings.html"><i class="bi bi-gear"></i><span>Settings</span></a>
+      </nav>
+      <div class="sidebar__foot">
+        <a class="btn-logout" href="#"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="page-head">
+        <div>
+          <h1 class="page-title">Reports</h1>
+          <p class="page-sub">Generate and export activity, access and usage reports.</p>
+        </div>
+      </header>
+
+      <section class="report-grid">
+        <div class="panel report-tile">
+          <div class="report-tile__icon" style="background:#3b6fe0"><i class="bi bi-people"></i></div>
+          <h3>User Activity</h3>
+          <p>Sign-ins, session counts and account changes per user.</p>
+          <span class="btn-ghost-ums"><i class="bi bi-eye"></i> View</span>
+        </div>
+        <div class="panel report-tile">
+          <div class="report-tile__icon" style="background:#1aa179"><i class="bi bi-box-arrow-in-right"></i></div>
+          <h3>Login History</h3>
+          <p>Successful and failed login attempts over time.</p>
+          <span class="btn-ghost-ums"><i class="bi bi-eye"></i> View</span>
+        </div>
+        <div class="panel report-tile">
+          <div class="report-tile__icon" style="background:#16a4bd"><i class="bi bi-grid"></i></div>
+          <h3>Application Usage</h3>
+          <p>Users and sessions broken down by application.</p>
+          <span class="btn-ghost-ums"><i class="bi bi-eye"></i> View</span>
+        </div>
+        <div class="panel report-tile">
+          <div class="report-tile__icon" style="background:#7c5cd6"><i class="bi bi-shield-check"></i></div>
+          <h3>Role Assignment</h3>
+          <p>Which roles are assigned to which users and apps.</p>
+          <span class="btn-ghost-ums"><i class="bi bi-eye"></i> View</span>
+        </div>
+        <div class="panel report-tile">
+          <div class="report-tile__icon" style="background:#e8973a"><i class="bi bi-lock"></i></div>
+          <h3>Locked Accounts</h3>
+          <p>Accounts locked by failed attempts or policy.</p>
+          <span class="btn-ghost-ums"><i class="bi bi-eye"></i> View</span>
+        </div>
+        <div class="panel report-tile">
+          <div class="report-tile__icon" style="background:#56637a"><i class="bi bi-clock-history"></i></div>
+          <h3>Audit Trail</h3>
+          <p>Full change log of administrative actions.</p>
+          <span class="btn-ghost-ums"><i class="bi bi-eye"></i> View</span>
+        </div>
+      </section>
+
+      <div class="panel">
+        <h2 class="panel__title">Logins Last 7 Days</h2>
+        <p class="panel__sub">Aggregated across all applications.</p>
+        <div class="chart-box">
+          <div class="line-chart">
+            <svg viewBox="0 0 420 220" preserveAspectRatio="none">
+              <line x1="30" y1="190" x2="400" y2="190" stroke="#e7ebf0"></line>
+              <polygon points="30,140 92,96 153,110 215,60 277,84 338,46 400,30 400,190 30,190" fill="rgba(26,161,121,.10)"></polygon>
+              <polyline points="30,140 92,96 153,110 215,60 277,84 338,46 400,30" fill="none" stroke="#1aa179" stroke-width="2.5"></polyline>
+              <g fill="#1aa179">
+                <circle cx="30" cy="140" r="3.5"></circle>
+                <circle cx="92" cy="96" r="3.5"></circle>
+                <circle cx="153" cy="110" r="3.5"></circle>
+                <circle cx="215" cy="60" r="3.5"></circle>
+                <circle cx="277" cy="84" r="3.5"></circle>
+                <circle cx="338" cy="46" r="3.5"></circle>
+                <circle cx="400" cy="30" r="3.5"></circle>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
